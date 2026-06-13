@@ -59,10 +59,37 @@ pip install -r requirements.txt
 
 \\\
 simulador-epidemias-modelo-SEIR/
-├── data/          # Datos CSV y GeoJSON
-├── models/        # Modelos Python
-├── visualization/ # Generación de mapas
-├── main.py        # Aplicación principal
+├── simulador_epidemias/ 
+    ├── settings.py
+    ├── urls.py
+    ├── wsgi.py
+├── simulator/        
+    ├── data/
+        ├── disease.csv
+        ├── mobility_global.csv
+        ├── mobbility_spain.csv
+        ├── population_global.csv
+        ├── population_spain.csv
+        ├── regions.geojson
+        ├── results.csv
+    ├── models/
+        ├── disease-py
+        ├── metrics.py
+        ├── simulation.py
+    ├── static/
+        ├── themes-py
+    ├── templates/
+        ├── dashboard.html
+    ├── utils/
+        ├── export.py
+    ├── visualization/
+        ├── animation.py
+        ├── graphics.py
+        ├── heat_map
+        ├── map_folium.py
+    ├── urls.py
+    ├── views.py
+├── manage.py        # Aplicación principal
 └── requirements.txt
 \\\
 
