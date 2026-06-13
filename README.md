@@ -20,9 +20,9 @@ git clone https://github.com/TU_USUARIO/simulador-modelo-SEIR.git
 2. Crear entorno virtual con la versión 3.11 de python: 
 python -3.11 -m venv venv
 
-### En caso de Windows:
+## - En caso de Windows:
 venv\Scripts\activate
-### En caso de Linux/Mac:
+## - En caso de Linux/Mac:
 source venv/bin/activate
 
 3. Instalar dependencias:
