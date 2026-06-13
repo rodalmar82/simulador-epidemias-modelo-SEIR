@@ -57,7 +57,7 @@ python manage.py runserver
 
 ## 📁 Estructura del Proyecto
 
-\\\
+```python
 simulador-epidemias-modelo-SEIR/
 ├── simulador_epidemias/ 
     ├── settings.py
@@ -91,7 +91,7 @@ simulador-epidemias-modelo-SEIR/
     ├── views.py
 ├── manage.py        # Aplicación principal
 └── requirements.txt
-\\\
+```
 
 ## 📝 Licencia
 
