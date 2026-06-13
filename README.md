@@ -16,8 +16,10 @@ Simulador de propagación de enfermedades usando modelo SEIR con visualización 
 1. Clonar repositorio:
 git clone https://github.com/TU_USUARIO/simulador-modelo-SEIR.git
 
-2. Crear entorno virtual: (La versión de python 3.11 es compatible con las librerías utilizadas en el projecto)
+#(La versión de python 3.11 es compatible con las librerías utilizadas en el projecto)
+2. Crear entorno virtual: 
 python -3.11 -m venv venv
+
 # Windows:
 venv\Scripts\activate
 # Linux/Mac:
