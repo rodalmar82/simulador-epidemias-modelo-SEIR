@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Epidemias Global</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white; padding: 20px 30px;
+            display: flex; align-items: center; gap: 15px;
+        }
+        .header h1 { font-size: 1.6rem; }
+        .header p  { font-size: 0.9rem; opacity: 0.8; margin-top: 4px; }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* ---- Panel de control ---- */
+        .control-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        .control-panel h2 { font-size: 1rem; margin-bottom: 16px; color: #1a1a2e; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600;
+                            color: #555; margin-bottom: 5px; }
+        .form-group select,
+        .form-group input {
+            width: 100%; padding: 8px 10px;
+            border: 1px solid #ddd; border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        .btn-simular {
+            width: 100%; padding: 12px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white; border: none; border-radius: 8px;
+            font-size: 1rem; font-weight: 600; cursor: pointer;
+            margin-top: 6px;
+        }
+        .btn-simular:hover { opacity: 0.9; }
+
+        /* ---- Área de contenido ---- */
+        .content-area { display: flex; flex-direction: column; gap: 16px; }
+
+        .error-banner {
+            background: #fee; border: 1px solid #fcc;
+            color: #c00; padding: 12px 16px; border-radius: 8px;
+        }
+
+        /* ---- Tarjetas de estadísticas ---- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+        .stat-card {
+            background: white; border-radius: 10px;
+            padding: 14px; text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        .stat-card .label { font-size: 0.72rem; color: #888; margin-bottom: 4px; }
+        .stat-card .value { font-size: 1.4rem; font-weight: 700; }
+        .stat-card .sub   { font-size: 0.75rem; color: #aaa; margin-top: 2px; }
+        .red    { color: #e74c3c; }
+        .gray   { color: #555; }
+        .green  { color: #27ae60; }
+        .blue   { color: #2980b9; }
+        .orange { color: #e67e22; }
+
+        /* ---- Secciones de gráficos ---- */
+        .section {
+            background: white; border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .section h3 { font-size: 0.95rem; color: #1a1a2e; margin-bottom: 12px; }
+
+        .charts-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%; height: 800px;
+            border-radius: 8px; overflow: hidden;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .charts-2col { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div>
+        <h1>🌍 Simulador de Epidemias Global</h1>
+        <p>Modelo SIR con movilidad entre regiones · Visualización interactiva</p>
+    </div>
+</div>
+
+<div class="main-layout">
+
+    <!-- ===== Panel de control ===== -->
+    <aside class="control-panel">
+        <h2>⚙️ Parámetros de Simulación</h2>
+
+        <!--
+            DIFERENCIA CLAVE Flask → Django:
+            Flask no requiere nada especial en el <form>.
+            Django requiere {% csrf_token %} dentro de todo <form method="POST">.
+            Es una protección de seguridad automática contra ataques CSRF.
+        -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="disease">🦠 Enfermedad</label>
+                <select name="disease" id="disease">
+                    {% for d in diseases %}
+                        <option value="{{ d }}" {% if d == selected_disease %}selected{% endif %}>
+                            {{ d }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="start_region">📍 País de origen</label>
+                <select name="start_region" id="start_region">
+                    {% for code, name in regiones.items %}
+                        <option value="{{ code }}" {% if code == start_region %}selected{% endif %}>
+                            {{ name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="days">📅 Días a simular (10–365)</label>
+                <input type="number" name="days" id="days"
+                       value="{{ days }}" min="10" max="365">
+            </div>
+
+            <div class="form-group">
+                <label for="initial_infected">🏥 Infectados iniciales</label>
+                <input type="number" name="initial_infected" id="initial_infected"
+                       value="{{ initial_infected }}" min="1" max="1000000">
+            </div>
+
+            <button type="submit" class="btn-simular">▶ Ejecutar Simulación</button>
+        </form>
+    </aside>
+
+    <!-- ===== Área de contenido ===== -->
+    <main class="content-area">
+
+        {% if error_message %}
+            <div class="error-banner">⚠️ {{ error_message }}</div>
+        {% endif %}
+
+        <!-- Estadísticas globales -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">Infectados globales</div>
+                <div class="value red">{{ stats.total_infectados_global }}</div>
+                <div class="sub">{{ stats.porcentaje_poblacion_global }}% pob. mundial</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Fallecidos globales</div>
+                <div class="value gray">{{ stats.total_muertos_global }}</div>
+                <div class="sub">CFR {{ stats.tasa_mortalidad_global }}%</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Recuperados globales</div>
+                <div class="value green">{{ stats.total_recuperados_global }}</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Infectados en {{ stats.nombre_pais_inicial }}</div>
+                <div class="value blue">{{ stats.total_infectados_pais }}</div>
+                <div class="sub">{{ stats.porcentaje_poblacion_pais }}% pob. local</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Fallecidos en {{ stats.nombre_pais_inicial }}</div>
+                <div class="value gray">{{ stats.total_muertos_pais }}</div>
+                <div class="sub">CFR {{ stats.tasa_mortalidad_pais }}%</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Rₜ (reproducción efectiva)</div>
+                <div class="value orange">{{ stats.rt }}</div>
+                <div class="sub">{{ stats.rt_interpretacion }}</div>
+            </div>
+        </div>
+
+        <!-- Mapa -->
+        {% if map_html %}
+        <div class="section">
+            <h3>🗺️ Mapa de Propagación Global</h3>
+            <div class="map-container">
+                <!--
+                    DIFERENCIA CLAVE Flask → Django:
+                    Flask:  {{ map_html }}          → Jinja2 escapa el HTML por defecto
+                    Django: {{ map_html|safe }}     → el filtro |safe desactiva el escape
+                    Sin |safe el navegador mostraría el HTML como texto plano.
+                -->
+                {{ map_html|safe }}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Gráficos fila 1 -->
+        <div class="charts-2col">
+            <div class="section">
+                <h3>📈 Evolución SEIR</h3>
+                {{ chart_evolucion|safe }}
+            </div>
+            <div class="section">
+                <h3>🥧 Distribución de la Población</h3>
+                {{ chart_pie|safe }}
+            </div>
+        </div>
+
+        <!-- Gráficos fila 2 -->
+        <div class="charts-2col">
+            <div class="section">
+                <h3>🏆 Top 10 Países más Afectados</h3>
+                {{ chart_top10|safe }}
+            </div>
+            <div class="section">
+                <h3>💀 Tasa de Mortalidad Global</h3>
+                {{ chart_mortalidad|safe }}
+            </div>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+region_id,region_name,population
+AND,Andalucia,8470000
+CAT,Cataluna,7800000
+MAD,Madrid,6760000
+VAL,Valencia,5100000
+GAL,Galicia,2700000
+CYL,Castilla y Leon,2400000
+PV,Pais Vasco,2200000
+CAN,Canarias,2200000
+CLM,Castilla-La Mancha,2000000
+MUR,Murcia,1500000
+ARA,Aragon,1300000
+AST,Asturias,1000000
+BAL,Islas Baleares,1200000
+EXT,Extremadura,1050000
+NAV,Navarra,660000
+CAN2,Cantabria,580000
+RIO,La Rioja,320000
+CEU,Ceuta,85000
+MEL,Melilla,87000

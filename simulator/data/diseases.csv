@@ -1,0 +1,43 @@
+id,name,infection_rate,mortality_rate,incubation_days,recovery_days
+1,Covid19,0.25,0.015,5,14
+2,Influenza,0.18,0.002,2,7
+3,Ebola,0.35,0.50,10,21
+4,SARS,0.22,0.10,4,14
+5,MERS,0.20,0.35,5,21
+6,Measles,0.90,0.001,10,14
+7,Tuberculosis,0.05,0.15,21,180
+8,Smallpox,0.30,0.30,12,21
+9,Cholera,0.40,0.05,2,7
+10,Plague,0.25,0.60,3,14
+11,Zika,0.12,0.0005,7,14
+12,Dengue,0.20,0.01,5,14
+13,Yellow Fever,0.15,0.20,6,21
+14,Avian Flu (H5N1),0.10,0.55,5,14
+15,Monkeypox,0.08,0.03,7,21
+16,Spanish Flu (1918),0.40,0.025,2,10
+17,HIV/AIDS,0.008,0.80,365,9999
+18,Common Cold (Rhinovirus),0.65,0.0001,2,5
+19,Polio,0.15,0.05,9,21
+20,Rabies,0.001,1.00,35,9999
+21,Malaria,0.30,0.002,12,21
+22,Chikungunya,0.35,0.001,4,10
+23,Nipah Virus,0.45,0.60,7,21
+24,Hantavirus,0.20,0.40,14,21
+25,Lassa Fever,0.15,0.20,10,21
+26,Marburg Virus,0.40,0.70,7,21
+27,Rift Valley Fever,0.30,0.05,4,14
+28,West Nile Virus,0.10,0.10,7,21
+29,Zika (Microcephaly strain),0.15,0.001,7,21
+30,COVID-19 Delta Variant,0.35,0.025,4,12
+31,COVID-19 Omicron Variant,0.55,0.010,3,10
+32,Hand-Foot-Mouth Disease,0.45,0.0001,5,7
+33,Whooping Cough (Pertussis),0.40,0.002,9,21
+34,Diphtheria,0.20,0.10,5,14
+35,Tetanus,0.01,0.20,8,21
+36,Meningitis,0.15,0.15,4,14
+37,Leprosy,0.02,0.01,365,730
+38,Lyme Disease,0.10,0.005,7,21
+39,Typhoid Fever,0.20,0.02,10,21
+40,Scarlet Fever,0.30,0.003,3,10
+41,Norovirus,0.70,0.0001,1,3
+42,Hantavirus (Andes strain),0.25,0.35,18,30

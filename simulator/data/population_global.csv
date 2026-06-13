@@ -1,0 +1,178 @@
+region_id,region_name,population
+FJI,Fiji,889953.0
+TZA,United Republic of Tanzania,58005463.0
+ESH,Western Sahara,603253.0
+CAN,Canada,37589262.0
+USA,United States of America,328239523.0
+KAZ,Kazakhstan,18513930.0
+UZB,Uzbekistan,33580650.0
+PNG,Papua New Guinea,8776109.0
+IDN,Indonesia,270625568.0
+ARG,Argentina,44938712.0
+CHL,Chile,18952038.0
+COD,Democratic Republic of the Congo,86790567.0
+SOM,Somalia,10192317.3
+KEN,Kenya,52573973.0
+SDN,Sudan,42813238.0
+TCD,Chad,15946876.0
+HTI,Haiti,11263077.0
+DOM,Dominican Republic,10738958.0
+RUS,Russia,144373535.0
+BHS,The Bahamas,389482.0
+FLK,Falkland Islands,3398.0
+-99,Norway,5347896.0
+GRL,Greenland,56225.0
+ATF,French Southern and Antarctic Lands,140.0
+TLS,East Timor,1293119.0
+ZAF,South Africa,58558270.0
+LSO,Lesotho,2125268.0
+MEX,Mexico,127575529.0
+URY,Uruguay,3461734.0
+BRA,Brazil,211049527.0
+BOL,Bolivia,11513100.0
+PER,Peru,32510453.0
+COL,Colombia,50339443.0
+PAN,Panama,4246439.0
+CRI,Costa Rica,5047561.0
+NIC,Nicaragua,6545502.0
+HND,Honduras,9746117.0
+SLV,El Salvador,6453553.0
+GTM,Guatemala,16604026.0
+BLZ,Belize,390353.0
+VEN,Venezuela,28515829.0
+GUY,Guyana,782766.0
+SUR,Suriname,581363.0
+-99,France,67059887.0
+ECU,Ecuador,17373662.0
+PRI,Puerto Rico,3193694.0
+JAM,Jamaica,2948279.0
+CUB,Cuba,11333483.0
+ZWE,Zimbabwe,14645468.0
+BWA,Botswana,2303697.0
+NAM,Namibia,2494530.0
+SEN,Senegal,16296364.0
+MLI,Mali,19658031.0
+MRT,Mauritania,4525696.0
+BEN,Benin,11801151.0
+NER,Niger,23310715.0
+NGA,Nigeria,200963599.0
+CMR,Cameroon,25876380.0
+TGO,Togo,8082366.0
+GHA,Ghana,30417856.0
+CIV,Ivory Coast,25716544.0
+GIN,Guinea,12771246.0
+GNB,Guinea-Bissau,1920922.0
+LBR,Liberia,4937374.0
+SLE,Sierra Leone,7813215.0
+BFA,Burkina Faso,20321378.0
+CAF,Central African Republic,4745185.0
+COG,Republic of the Congo,5380508.0
+GAB,Gabon,2172579.0
+GNQ,Equatorial Guinea,1355986.0
+ZMB,Zambia,17861030.0
+MWI,Malawi,18628747.0
+MOZ,Mozambique,30366036.0
+SWZ,eSwatini,1148130.0
+AGO,Angola,31825295.0
+BDI,Burundi,11530580.0
+ISR,Israel,9053300.0
+LBN,Lebanon,6855713.0
+MDG,Madagascar,26969307.0
+PSE,Palestine,4685306.0
+GMB,Gambia,2347706.0
+TUN,Tunisia,11694719.0
+DZA,Algeria,43053054.0
+JOR,Jordan,10101694.0
+ARE,United Arab Emirates,9770529.0
+QAT,Qatar,2832067.0
+KWT,Kuwait,4207083.0
+IRQ,Iraq,39309783.0
+OMN,Oman,4974986.0
+VUT,Vanuatu,299882.0
+KHM,Cambodia,16486542.0
+THA,Thailand,69625582.0
+LAO,Laos,7169455.0
+MMR,Myanmar,54045420.0
+VNM,Vietnam,96462106.0
+PRK,North Korea,25666161.0
+KOR,South Korea,51709098.0
+MNG,Mongolia,3225167.0
+IND,India,1366417754.0
+BGD,Bangladesh,163046161.0
+BTN,Bhutan,763092.0
+NPL,Nepal,28608710.0
+PAK,Pakistan,216565318.0
+AFG,Afghanistan,38041754.0
+TJK,Tajikistan,9321018.0
+KGZ,Kyrgyzstan,6456900.0
+TKM,Turkmenistan,5942089.0
+IRN,Iran,82913906.0
+SYR,Syria,17070135.0
+ARM,Armenia,2957731.0
+SWE,Sweden,10285453.0
+BLR,Belarus,9466856.0
+UKR,Ukraine,44385155.0
+POL,Poland,37970874.0
+AUT,Austria,8877067.0
+HUN,Hungary,9769949.0
+MDA,Moldova,2657637.0
+ROU,Romania,19356544.0
+LTU,Lithuania,2786844.0
+LVA,Latvia,1912789.0
+EST,Estonia,1326590.0
+DEU,Germany,83132799.0
+BGR,Bulgaria,6975761.0
+GRC,Greece,10716322.0
+TUR,Turkey,83429615.0
+ALB,Albania,2854191.0
+HRV,Croatia,4067500.0
+CHE,Switzerland,8574832.0
+LUX,Luxembourg,619896.0
+BEL,Belgium,11484055.0
+NLD,Netherlands,17332850.0
+PRT,Portugal,10269417.0
+ESP,Spain,47076781.0
+IRL,Ireland,4941444.0
+NCL,New Caledonia,287800.0
+SLB,Solomon Islands,669823.0
+NZL,New Zealand,4917000.0
+AUS,Australia,25364307.0
+LKA,Sri Lanka,21803000.0
+CHN,China,1397715000.0
+TWN,Taiwan,23568378.0
+ITA,Italy,60297396.0
+DNK,Denmark,5818553.0
+GBR,United Kingdom,66834405.0
+ISL,Iceland,361313.0
+AZE,Azerbaijan,10023318.0
+GEO,Georgia,3720382.0
+PHL,Philippines,108116615.0
+MYS,Malaysia,31949777.0
+BRN,Brunei,433285.0
+SVN,Slovenia,2087946.0
+FIN,Finland,5520314.0
+SVK,Slovakia,5454073.0
+CZE,Czechia,10669709.0
+ERI,Eritrea,6081196.0
+JPN,Japan,126264931.0
+PRY,Paraguay,7044636.0
+YEM,Yemen,29161922.0
+SAU,Saudi Arabia,34268528.0
+ATA,Antarctica,4490.0
+-99,Northern Cyprus,326000.0
+CYP,Cyprus,1198575.0
+MAR,Morocco,36471769.0
+EGY,Egypt,100388073.0
+LBY,Libya,6777452.0
+ETH,Ethiopia,112078730.0
+DJI,Djibouti,973560.0
+-99,Somaliland,5096159.0
+UGA,Uganda,44269594.0
+RWA,Rwanda,12626950.0
+BIH,Bosnia and Herzegovina,3301000.0
+MKD,North Macedonia,2083459.0
+SRB,Republic of Serbia,6944975.0
+MNE,Montenegro,622137.0
+-99,Kosovo,1794248.0
+TTO,Trinidad and Tobago,1394973.0
+SSD,South Sudan,11062113.0
