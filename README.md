@@ -16,7 +16,7 @@ Simulador de propagación de enfermedades usando modelo SEIR con visualización 
 1. Clonar repositorio:
 \\\ash
 git clone https://github.com/TU_USUARIO/simulador-modelo-SEIR.git
-cd simulador-epidemias-espana
+cd simulador-epidemias-modelo-SEIR
 \\\
 
 2. Crear entorno virtual:
