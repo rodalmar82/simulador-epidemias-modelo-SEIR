@@ -21,7 +21,7 @@ cd simulador-epidemias-espana
 
 2. Crear entorno virtual:
 \\\ash
-python -m venv venv
+python -3.11 -m venv venv
 # Windows:
 venv\Scripts\activate
 # Linux/Mac:
@@ -35,10 +35,10 @@ pip install -r requirements.txt
 
 4. Ejecutar aplicación:
 \\\ash
-python main.py
+# python manage.py runserver
 \\\
 
-5. Abrir navegador en: http://localhost:5000
+5. Abrir navegador en: http://localhost:8000
 
 ## 🎯 Uso
 
@@ -50,7 +50,7 @@ python main.py
 
 ## 📊 Tecnologías
 
-- **Backend**: Python, Flask
+- **Backend**: Python, Django
 - **Modelo**: Pandas, NumPy
 - **Visualización**: Folium, GeoPandas
 - **Frontend**: HTML, CSS
@@ -58,7 +58,7 @@ python main.py
 ## 📁 Estructura del Proyecto
 
 \\\
-simulador-epidemias-espana/
+simulador-epidemias-modelo-SEIR/
 ├── data/          # Datos CSV y GeoJSON
 ├── models/        # Modelos Python
 ├── visualization/ # Generación de mapas
