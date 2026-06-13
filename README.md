@@ -29,12 +29,12 @@ source venv/bin/activate
 \\\
 
 3. Instalar dependencias:
-\\\ash
+\\\Bash
 pip install -r requirements.txt
 \\\
 
 4. Ejecutar aplicación:
-\\\ash
+\\\Bash
 # python manage.py runserver
 \\\
 
