@@ -34,11 +34,11 @@ source venv/bin/activate
 ```python
 pip install -r requirements.txt
 ```
-5. Ejecutar aplicación:
+4. Ejecutar aplicación:
 ```python
 python manage.py runserver
 ```
-7. Abrir navegador en: http://localhost:8000
+5. Abrir navegador en: http://localhost:8000
 
 ## 🎯 Uso
 
