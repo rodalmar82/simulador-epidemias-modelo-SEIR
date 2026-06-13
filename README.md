@@ -4,7 +4,7 @@ Simulador de propagación de enfermedades usando modelo SEIR con visualización 
 
 ## 🚀 Características
 
-- Modelo epidemiológico SIR (Susceptible-Expuesto-Infectado-Recuperado)
+- Modelo epidemiológico SEIR (Susceptible-Expuesto-Infectado-Recuperado)
 - 42 enfermedades preconfiguradas (COVID-19, Ebola, Sarampión, etc.)
 - Visualización con mapas interactivos (Folium)
 - Interfaz web con Django
