@@ -1,62 +1,71 @@
-# Simulador de Epidemias Global — Django
+# 🦠 Simulador de Epidemias Global — Modelo SEIR
 
-## Estructura del proyecto
+Simulador de propagación de enfermedades usando modelo SEIR con visualización interactiva.
 
-```
-simulador_epidemias/
-├── manage.py                        ← punto de entrada (como "python app.py" en Flask)
-├── simulador_epidemias/             ← configuración del proyecto Django
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-└── simulator/                       ← la app (equivale a tu main.py de Flask)
-    ├── views.py                     ← lógica de rutas (antes en main.py)
-    ├── urls.py                      ← rutas (antes @app.route)
-    ├── templates/
-    │   └── dashboard.html
-    ├── models/                      ← sin cambios respecto a Flask
-    ├── visualization/               ← sin cambios
-    ├── utils/                       ← sin cambios
-    ├── static/                      ← sin cambios
-    └── data/                        ← pon aquí tus CSVs y GeoJSON
-```
+## 🚀 Características
 
-## Instalación
+- Modelo epidemiológico SIR (Susceptible-Expuesto-Infectado-Recuperado)
+- 42 enfermedades preconfiguradas (COVID-19, Ebola, Sarampión, etc.)
+- Visualización con mapas interactivos (Folium)
+- Interfaz web con Django
+- Datos reales de población mundial
+- Movilidad entre distintos paises
 
-```bash
-pip install django pandas numpy plotly folium openpyxl
-```
+## 📦 Instalación
 
-## Datos necesarios
+1. Clonar repositorio:
+\\\ash
+git clone https://github.com/TU_USUARIO/simulador-modelo-SEIR.git
+cd simulador-epidemias-espana
+\\\
 
-Copia tu carpeta `data/` dentro de `simulator/`:
+2. Crear entorno virtual:
+\\\ash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+\\\
 
-```
-simulator/data/
-├── population_global.csv
-├── mobility_global.csv
-├── diseases.csv
-└── regions.geojson
-```
+3. Instalar dependencias:
+\\\ash
+pip install -r requirements.txt
+\\\
 
-## Arrancar el servidor
+4. Ejecutar aplicación:
+\\\ash
+python main.py
+\\\
 
-```bash
-# Desde la carpeta raíz del proyecto (donde está manage.py)
-python manage.py runserver
-```
+5. Abrir navegador en: http://localhost:5000
 
-Abre el navegador en: **http://127.0.0.1:8000**
+## 🎯 Uso
 
----
+1. Seleccionar enfermedad
+2. Elegir región inicial
+3. Especificar número de infectados iniciales
+4. Definir días de simulación
+5. Click en 'Ejecutar Simulación'
 
-## Diferencias clave Flask → Django
+## 📊 Tecnologías
 
-| Concepto         | Flask                              | Django                                  |
-|------------------|------------------------------------|-----------------------------------------|
-| Arrancar         | `python main.py`                   | `python manage.py runserver`            |
-| Ruta             | `@app.route("/")`                  | `path('', views.index)` en `urls.py`   |
-| Leer formulario  | `request.form.get("x")`            | `request.POST.get("x")`                |
-| Renderizar       | `render_template("x.html", k=v)`   | `render(request, "x.html", {"k": v})`  |
-| HTML sin escapar | `{{ var }}` (Jinja2 escapa igual)  | `{{ var\|safe }}` (filtro explícito)    |
-| Seguridad forms  | No requiere nada                   | `{% csrf_token %}` obligatorio en POST  |
+- **Backend**: Python, Flask
+- **Modelo**: Pandas, NumPy
+- **Visualización**: Folium, GeoPandas
+- **Frontend**: HTML, CSS
+
+## 📁 Estructura del Proyecto
+
+\\\
+simulador-epidemias-espana/
+├── data/          # Datos CSV y GeoJSON
+├── models/        # Modelos Python
+├── visualization/ # Generación de mapas
+├── main.py        # Aplicación principal
+└── requirements.txt
+\\\
+
+## 📝 Licencia
+
+MIT License
