@@ -12,7 +12,7 @@ Simulador de propagación de enfermedades usando modelo SEIR con visualización 
 - Movilidad entre distintos paises
 
 ## 📦 Instalación
-  #### Será necesario clonar el repositorio de Github y crear un entorno vistual.
+#### Será necesario clonar el repositorio de Github y crear un entorno vistual.
 
 1. Clonar repositorio:
 git clone https://github.com/TU_USUARIO/simulador-modelo-SEIR.git
