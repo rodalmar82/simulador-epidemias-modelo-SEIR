@@ -28,7 +28,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 4. Ejecutar aplicación:
-# python manage.py runserver
+python manage.py runserver
 
 5. Abrir navegador en: http://localhost:8000
 
